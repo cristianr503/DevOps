@@ -1,0 +1,71 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define your environment variables here
+        // For example, .NET Core version, API endpoints, credentials, etc.
+        DOTNET_CORE_VERSION = '6.0'
+        // Define path to your certificate and password if necessary
+        // CERT_PATH = '/path/to/cert.pfx'
+        // CERT_PASSWORD = credentials('cert-password')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checks out the source code from the GitHub repository
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building .NET Core application'
+                sh 'dotnet build --configuration Release'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests'
+                // Run tests using the .NET Core CLI
+                sh 'dotnet test --no-restore'
+            }
+        }
+
+        stage('Sign') {
+            steps {
+                echo 'Signing the application'
+                // Add your code signing commands here
+                // This will depend on your signing method and environment
+                // Example for Windows: sh 'signtool sign /f $CERT_PATH /p $CERT_PASSWORD /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 /v path/to/binaries/*.dll'
+                // Adjust the path and method according to your setup
+            }
+        }
+
+        stage('Publish') {
+            steps {
+                echo 'Publishing the application'
+                // Publish the application to a directory
+                sh 'dotnet publish --configuration Release --output ./publish'
+                // Further steps to publish the application to a server or service can be added here
+                // Example: sh 'curl -T publish/myapp.zip http://myserver.com/api/upload'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Cleaning up'
+            sh 'rm -rf publish'
+        }
+
+        success {
+            echo 'Build succeeded!'
+        }
+
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}

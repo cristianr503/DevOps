@@ -1,0 +1,5 @@
+routes:
+  - path: '/api/hello'
+    method: 'GET'
+  - path: '/api/heartbeat'
+    method: 'POST'

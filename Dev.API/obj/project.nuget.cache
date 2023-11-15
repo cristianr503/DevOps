@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "zVmmVL5ziCCZKNAo9ga5czvFG5egk26ohtD2teOedljpat/O+SHyCZkbXu3cnvozSMfJtmNKFS5bOYguJbAoSA==",
+  "success": true,
+  "projectFilePath": "/Users/cristianrivera/code/DevOps/Dev.API/Dev.API.csproj",
+  "expectedPackageFiles": [
+    "/Users/cristianrivera/.nuget/packages/microsoft.aspnetcore.openapi/7.0.4/microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
+    "/Users/cristianrivera/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/cristianrivera/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/cristianrivera/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/cristianrivera/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/cristianrivera/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/cristianrivera/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "/Users/cristianrivera/.nuget/packages/yamldotnet/13.7.1/yamldotnet.13.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
